@@ -148,4 +148,5 @@ Feedstock Maintainers
 =====================
 
 * [@ilya-lavrenov](https://github.com/ilya-lavrenov/)
+* [@popovaan](https://github.com/popovaan/)
 
