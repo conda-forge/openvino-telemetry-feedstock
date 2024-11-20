@@ -1,13 +1,14 @@
 {% set name = "openvino-telemetry" %}
-{% set version = "2024.1.0" %}
+{% set version = "2024.5.0" %}
+{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6df9a8f499e75d893d0bece3c272e798109f0bd40d1eb2488adca6a0da1d9b9f
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 592d266954903e8f800d984a7573f218af8118a6c15fc623545ea0b5b0fa72e1
 
 build:
   number: 0
@@ -19,11 +20,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - setuptools
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - openvino_telemetry
     - openvino_telemetry.backend
