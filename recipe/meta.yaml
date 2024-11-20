@@ -1,5 +1,6 @@
 {% set name = "openvino-telemetry" %}
 {% set version = "2024.5.0" %}
+{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
@@ -19,11 +20,14 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - setuptools
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - openvino_telemetry
     - openvino_telemetry.backend
