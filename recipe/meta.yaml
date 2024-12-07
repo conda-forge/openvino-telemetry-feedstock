@@ -11,7 +11,7 @@ source:
   sha256: 592d266954903e8f800d984a7573f218af8118a6c15fc623545ea0b5b0fa72e1
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - opt_in_out = openvino_telemetry.opt_in_out:main
   script: "{{ PYTHON }} -m pip install . -vv"
