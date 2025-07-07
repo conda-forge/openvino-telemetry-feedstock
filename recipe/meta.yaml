@@ -1,5 +1,5 @@
 {% set name = "openvino-telemetry" %}
-{% set version = "2025.1.0" %}
+{% set version = "2025.2.0" %}
 {% set python_min = "3.8" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 12a2b04cd18e83cc3d818b9fff54274922e19eca2434616b8f3eb2904a9cb43a
+  sha256: 8bf8127218e51e99547bf38b8fb85a8b31c9bf96e6f3a82eb0b3b6a34155977c
 
 build:
   number: 0
